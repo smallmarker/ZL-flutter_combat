@@ -5,6 +5,7 @@ import 'package:flutter_combat/chapter11/websocket.dart';
 import 'package:flutter_combat/chapter12/camera_example.dart';
 import 'package:flutter_combat/chapter12/flutter_plugin.dart';
 import 'package:flutter_combat/chapter14/element.dart';
+import 'package:flutter_combat/chapter14/image.dart';
 
 List<CameraDescription> cameras;
 
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: CustomHome(),
+      home: ImageInternalTestRoute(),
     );
   }
 }
