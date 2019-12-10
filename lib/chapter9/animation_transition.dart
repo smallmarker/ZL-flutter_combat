@@ -18,10 +18,8 @@ class _AnimatedWidgetsTestState extends State<AnimatedWidgetsTest> {
   @override
   Widget build(BuildContext context) {
     var duration = Duration(seconds: 5);
-    return Scaffold(
-      appBar: AppBar(title: Text('动画过渡组件'),),
-      body: SingleChildScrollView(
-        child: Column(
+    return  SingleChildScrollView(
+      child: Column(
           children: <Widget>[
             RaisedButton(
               onPressed: () {
@@ -118,7 +116,6 @@ class _AnimatedWidgetsTestState extends State<AnimatedWidgetsTest> {
               child: e,
             );
           }).toList()
-        ),
       ),
     );
   }

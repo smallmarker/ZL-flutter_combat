@@ -26,20 +26,17 @@ class _FlutterPluginRouteState extends State<FlutterPluginRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('FlutterPluginRoute'),),
-      body: Material(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              RaisedButton(
-                child: Text('Get Battery Level'),
-                onPressed: _getBatteryLevel,
-              ),
-              Text(_batteryLevel)
-            ],
-          ),
+    return Material(
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            RaisedButton(
+              child: Text('Get Battery Level'),
+              onPressed: _getBatteryLevel,
+            ),
+            Text(_batteryLevel)
+          ],
         ),
       ),
     );

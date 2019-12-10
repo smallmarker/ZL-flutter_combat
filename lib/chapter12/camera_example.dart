@@ -64,44 +64,41 @@ class _CameraExampleRouteState extends State<CameraExampleRoute>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('相机示例'),),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              child: Padding(
-                padding: const EdgeInsets.all(1.0),
-                child: Center(
-                  child:_cameraPreviewWidget(),
-                ),
+    return Column(
+      children: <Widget>[
+        Expanded(
+          child: Container(
+            child: Padding(
+              padding: const EdgeInsets.all(1.0),
+              child: Center(
+                child:_cameraPreviewWidget(),
               ),
-              decoration: BoxDecoration(
-                  color: Colors.black,
-                  border: Border.all(
-                    color: controller != null &&
-                        controller.value.isRecordingVideo
-                        ? Colors.redAccent
-                        : Colors.grey,
-                    width: 3.0,
-                  )
-              ),
+            ),
+            decoration: BoxDecoration(
+                color: Colors.black,
+                border: Border.all(
+                  color: controller != null &&
+                      controller.value.isRecordingVideo
+                      ? Colors.redAccent
+                      : Colors.grey,
+                  width: 3.0,
+                )
             ),
           ),
-          _captureControllRowWidget(),
-          _toggleAudioWidget(),
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                _cameraTogglesRowWidget(),
-                _thumbnailWidget()
-              ],
-            ),
-          )
-        ],
-      ),
+        ),
+        _captureControllRowWidget(),
+        _toggleAudioWidget(),
+        Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              _cameraTogglesRowWidget(),
+              _thumbnailWidget()
+            ],
+          ),
+        )
+      ],
     );
   }
 

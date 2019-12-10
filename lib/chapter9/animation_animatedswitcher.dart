@@ -12,37 +12,34 @@ class _AnimatedSwitcherCounterRouteState extends State<AnimatedSwitcherCounterRo
   int _count = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('AnimatedSwitcher(切换动画)'),),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            AnimatedSwitcher(
-              duration: const Duration(milliseconds: 500),
-              transitionBuilder: (child, animation) {
-                return SlideTransitionX(
-                  child: child,
-                  direction: AxisDirection.up,
-                  position: animation,
-                );
-              },
-              child: Text(
-                '$_count',
-                key: ValueKey<int>(_count),
-                style: Theme.of(context).textTheme.display1,
-              ),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 500),
+            transitionBuilder: (child, animation) {
+              return SlideTransitionX(
+                child: child,
+                direction: AxisDirection.up,
+                position: animation,
+              );
+            },
+            child: Text(
+              '$_count',
+              key: ValueKey<int>(_count),
+              style: Theme.of(context).textTheme.display1,
             ),
-            RaisedButton(
-              child: const Text('+1'),
-              onPressed: () {
-                setState(() {
-                  _count += 1;
-                });
-              },
-            )
-          ],
-        ),
+          ),
+          RaisedButton(
+            child: const Text('+1'),
+            onPressed: () {
+              setState(() {
+                _count += 1;
+              });
+            },
+          )
+        ],
       ),
     );
   }

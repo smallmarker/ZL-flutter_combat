@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class StaggerAnimation extends StatelessWidget {
 
   final Animation<double> controller;
@@ -89,26 +90,23 @@ class StaggerRouteState extends State<StaggerRoute> with TickerProviderStateMixi
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Stagger(交织动画)'),),
-      body: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () {
-          _playAnimation();
-        },
-        child: Center(
-          child: Container(
-            width: 300.0,
-            height: 300.0,
-            decoration: BoxDecoration(
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () {
+        _playAnimation();
+      },
+      child: Center(
+        child: Container(
+          width: 300.0,
+          height: 300.0,
+          decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.1),
               border: Border.all(
-                color: Colors.black.withOpacity(0.5)
+                  color: Colors.black.withOpacity(0.5)
               )
-            ),
-            child: StaggerAnimation(
-              controller: _controller,
-            ),
+          ),
+          child: StaggerAnimation(
+            controller: _controller,
           ),
         ),
       ),

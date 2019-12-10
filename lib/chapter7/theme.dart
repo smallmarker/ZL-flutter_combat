@@ -21,7 +21,7 @@ class _ThemeTestRouteState extends State<ThemeTestRoute> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('主题测试'),
+          title: Text('颜色和主题（Theme）'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,

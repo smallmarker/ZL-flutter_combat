@@ -13,7 +13,7 @@ class CustomScrollViewTestRoute extends StatelessWidget {
             pinned: true,
             expandedHeight: 250.0,
             flexibleSpace: FlexibleSpaceBar(
-              title: const Text('Demo'),
+              title: const Text('CustomScrollView'),
               background: Image.asset(
                 "./images/avatar.jpg", fit: BoxFit.cover
               ),

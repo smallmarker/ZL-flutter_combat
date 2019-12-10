@@ -15,18 +15,15 @@ class HomeView extends ComponentElement {
   @override
   Widget build() {
     Color primary = Theme.of(this).primaryColor;
-    return Scaffold(
-      appBar: AppBar(title: Text('Element'),),
-      body: GestureDetector(
-        child: Center(
-          child: FlatButton(
-            child: Text(text, style: TextStyle(color: primary),),
-            onPressed: () {
-              var t = text.split("")..shuffle();
-              text = t.join();
-              markNeedsBuild();
-            },
-          ),
+    return GestureDetector(
+      child: Center(
+        child: FlatButton(
+          child: Text(text, style: TextStyle(color: primary),),
+          onPressed: () {
+            var t = text.split("")..shuffle();
+            text = t.join();
+            markNeedsBuild();
+          },
         ),
       ),
     );

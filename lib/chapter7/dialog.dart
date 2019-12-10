@@ -2,20 +2,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class DialogRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: Scaffold(
-        appBar: AppBar(title: Text('对话框详解示例')),
-        body: DialogTestRoute(),
-      ),
-    );
-  }
-
-}
-
 class DialogTestRoute extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _DialogTestRouteState();

@@ -21,12 +21,10 @@ class _FutureAndStreamRouteState extends State<FutureAndStreamRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('FutureBuilder和StreamBuilder')),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Expanded(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Expanded(
             child: Center(
               child: FutureBuilder<String>(
                 future: mockNetworkData(),
@@ -47,8 +45,8 @@ class _FutureAndStreamRouteState extends State<FutureAndStreamRoute> {
                 },
               ),
             )
-          ),
-          Expanded(
+        ),
+        Expanded(
             child: Center(
               child: StreamBuilder<int>(
                 stream: counter(),
@@ -68,9 +66,8 @@ class _FutureAndStreamRouteState extends State<FutureAndStreamRoute> {
                 },
               ),
             )
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 

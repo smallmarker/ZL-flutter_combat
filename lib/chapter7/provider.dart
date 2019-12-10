@@ -123,6 +123,7 @@ class _ProviderRouteState extends State<ProviderRoute> {
         data: CartModel(),
         child: Builder(builder: (context){
           return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Consumer<CartModel>(
                 builder: (context, cart) => Text('总价: ${cart.totalPrice}'),

@@ -29,11 +29,8 @@ class _ScaleAnimationRouteState extends State<ScaleAnimationRoute> with SingleTi
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Animation'),),
-      body: Center(
+    return Center(
         child: GrowTransition(animation: _animation, child: Image.asset("images/avatar.jpg"),)
-      )
     );
   }
 

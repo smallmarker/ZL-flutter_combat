@@ -45,6 +45,7 @@ class _ScrollControllerNotificationTextRouteState extends State<ScrollController
       ),
       body: Scrollbar(
         child: NotificationListener<ScrollNotification>(
+          // ignore: missing_return
           onNotification: (ScrollNotification notification) {
             double progress = notification.metrics.pixels / notification.metrics.maxScrollExtent;
             //重新构建
