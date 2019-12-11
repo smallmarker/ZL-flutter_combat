@@ -19,7 +19,6 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -32,7 +31,6 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
           tabs: tabs.map((e) => Tab(text: e)).toList(),
         ),
       ),
-      drawer: MyDrawer(),
       body: TabBarView(
         controller: _tabController,
         children: tabs.map((e) {
@@ -73,53 +71,3 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>
   void _onAdd() {}
 }
 
-class MyDrawer extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Drawer(
-      child: MediaQuery.removePadding(
-          context: context,
-          removeTop: true,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top: 38.0),
-                child: Row(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: ClipOval(
-                        child: Image.asset(
-                          'imgs/avatar.png',
-                          width: 80,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'Wendux',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-              ),
-              Expanded(
-                child: ListView(
-                  children: <Widget>[
-                    ListTile(
-                      leading: const Icon(Icons.add),
-                      title: const Text('Add account'),
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.settings),
-                      title: const Text('Manage accounts'),
-                    )
-                  ],
-                ),
-              )
-            ],
-          )),
-    );
-  }
-}

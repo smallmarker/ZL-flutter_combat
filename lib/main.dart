@@ -1,6 +1,6 @@
-
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_combat/chapter1/homepage.dart';
 import 'package:flutter_combat/chapter10/custompaint.dart';
 import 'package:flutter_combat/chapter10/gradient_circular_progress.dart';
 import 'package:flutter_combat/chapter10/gradientbutton.dart';
@@ -11,6 +11,21 @@ import 'package:flutter_combat/chapter12/camera_example.dart';
 import 'package:flutter_combat/chapter12/flutter_plugin.dart';
 import 'package:flutter_combat/chapter14/element.dart';
 import 'package:flutter_combat/chapter14/image.dart';
+import 'package:flutter_combat/chapter2/progress.dart';
+import 'package:flutter_combat/chapter2/timer.dart';
+import 'package:flutter_combat/chapter3/login_test.dart';
+import 'package:flutter_combat/chapter4/align.dart';
+import 'package:flutter_combat/chapter4/flex.dart';
+import 'package:flutter_combat/chapter4/row_column.dart';
+import 'package:flutter_combat/chapter4/stack_positioned.dart';
+import 'package:flutter_combat/chapter4/wrap.dart';
+import 'package:flutter_combat/chapter5/box.dart';
+import 'package:flutter_combat/chapter5/clip.dart';
+import 'package:flutter_combat/chapter5/container.dart';
+import 'package:flutter_combat/chapter5/decoratebox.dart';
+import 'package:flutter_combat/chapter5/padding.dart';
+import 'package:flutter_combat/chapter5/scaffold.dart';
+import 'package:flutter_combat/chapter5/transform.dart';
 import 'package:flutter_combat/chapter6/customscrollview.dart';
 import 'package:flutter_combat/chapter6/gridview.dart';
 import 'package:flutter_combat/chapter6/listview.dart';
@@ -50,7 +65,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-PageInfo _pageInfo = PageInfo("《Flutter实战练习》", Container());
+PageInfo _pageInfo = PageInfo("《Flutter实战》练习", HomePageRoute());
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -76,10 +91,7 @@ Widget rightDrawer(BuildContext context) {
   void _openPage(PageInfo pageInfo) {
     if (pageInfo.isJumpPage) {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return Scaffold(
-          appBar: pageInfo.isShowAppBar ? AppBar(title: Text(pageInfo.title)) : null,
-          body: pageInfo.child,
-        );
+        return pageInfo.child;
       }));
     } else {
       _pageInfo = pageInfo;
@@ -103,42 +115,43 @@ Widget rightDrawer(BuildContext context) {
       children: <Widget>[
         ExpansionTile(
           title: Text('第一章：起步'),
+          children: _generateItem([
+            PageInfo("简介", HomePageRoute())
+          ]),
         ),
         ExpansionTile(
           title: Text('第二章：第一个Flutter应用'),
-          children: _generateItem([PageInfo('计数器示例', null)]),
+          children: _generateItem([
+            PageInfo('计数器示例', TimerRoute())
+          ]),
         ),
         ExpansionTile(
           title: Text('第三章：基础组件'),
           children: _generateItem([
-            PageInfo('文本、字体样式', null),
-            PageInfo('按钮', null),
-            PageInfo('图片和Icon', null),
-            PageInfo('单选框和复选框', null),
-            PageInfo('输入框和表单', null),
-            PageInfo('进度指示器', null)
+            PageInfo('输入框和表单', LoginTestRoute()),
+            PageInfo('进度指示器', ProgressRoute())
           ]),
         ),
         ExpansionTile(
           title: Text('第四章：布局类组件'),
           children: _generateItem([
-            PageInfo('线性布局（Row、Column）', null),
-            PageInfo('弹性布局（Flex）', null),
-            PageInfo('流式布局（Wrap、Flow）', null),
-            PageInfo('层叠布局（Stack、Positioned）', null),
-            PageInfo('对齐与相对定位（Align）', null)
+            PageInfo('线性布局（Row、Column）', RowColumnRoute()),
+            PageInfo('弹性布局（Flex）', FlexLayoutTestRoute()),
+            PageInfo('流式布局（Wrap、Flow）', WrapTestRoute()),
+            PageInfo('层叠布局（Stack、Positioned）', StackPositioned()),
+            PageInfo('对齐与相对定位（Align）', AlignTestRoute())
           ]),
         ),
         ExpansionTile(
           title: Text('第五章：容器类组件'),
           children: _generateItem([
-            PageInfo('填充（Padding）', null),
-            PageInfo('尺寸限制类容器（ConstrainedBox等）', null),
-            PageInfo('装饰容器（DecoratedBox）', null),
-            PageInfo('变换（Transform）', null),
-            PageInfo('Container容器', null),
-            PageInfo('Scaffold、TabBar、底部导航', null),
-            PageInfo('剪裁（Clip）', null)
+            PageInfo('填充（Padding）', PaddingTestRoute()),
+            PageInfo('尺寸限制类容器（ConstrainedBox等）', BoxTestRoute()),
+            PageInfo('装饰容器（DecoratedBox）', DecorateRoute()),
+            PageInfo('变换（Transform）', TransformRoute()),
+            PageInfo('Container容器', ContainerRoute()),
+            PageInfo('Scaffold、TabBar、底部导航', ScaffoldRoute(), isJumpPage: true),
+            PageInfo('剪裁（Clip）', ClipTestRoute())
           ]),
         ),
         ExpansionTile(
@@ -147,7 +160,7 @@ Widget rightDrawer(BuildContext context) {
             PageInfo('SingleChildScrollView', null),
             PageInfo('ListView', InfiniteListView()),
             PageInfo('GridView', InfiniteGridView()),
-            PageInfo('CustomScrollView', CustomScrollViewTestRoute(), isJumpPage: true, isShowAppBar: false),
+            PageInfo('CustomScrollView', CustomScrollViewTestRoute(), isJumpPage: true),
             PageInfo('滚动监听及控制（ScrollController）', ScrollControllerNotificationTextRoute(), isJumpPage: true)
           ]),
         ),
@@ -224,6 +237,5 @@ class PageInfo{
   String title;
   Widget child;
   bool isJumpPage;
-  bool isShowAppBar;
-  PageInfo(this.title, this.child, {this.isJumpPage = false, this.isShowAppBar = true});
+  PageInfo(this.title, this.child, {this.isJumpPage = false});
 }
