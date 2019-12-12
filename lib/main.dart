@@ -6,7 +6,9 @@ import 'package:flutter_combat/chapter10/gradient_circular_progress.dart';
 import 'package:flutter_combat/chapter10/gradientbutton.dart';
 import 'package:flutter_combat/chapter10/turnbox.dart';
 import 'package:flutter_combat/chapter11/dio.dart';
+import 'package:flutter_combat/chapter11/file_operation.dart';
 import 'package:flutter_combat/chapter11/httpclient.dart';
+import 'package:flutter_combat/chapter11/websocket.dart';
 import 'package:flutter_combat/chapter12/camera_example.dart';
 import 'package:flutter_combat/chapter12/flutter_plugin.dart';
 import 'package:flutter_combat/chapter14/element.dart';
@@ -30,9 +32,13 @@ import 'package:flutter_combat/chapter6/customscrollview.dart';
 import 'package:flutter_combat/chapter6/gridview.dart';
 import 'package:flutter_combat/chapter6/listview.dart';
 import 'package:flutter_combat/chapter6/scrollcontroller.dart';
+import 'package:flutter_combat/chapter6/singlechildscrollview.dart';
+import 'package:flutter_combat/chapter7/Inheritedwidget.dart';
 import 'package:flutter_combat/chapter7/dialog.dart';
 import 'package:flutter_combat/chapter7/future_stream.dart';
 import 'package:flutter_combat/chapter7/provider.dart';
+import 'package:flutter_combat/chapter7/theme.dart';
+import 'package:flutter_combat/chapter7/willpopscope.dart';
 import 'package:flutter_combat/chapter8/gesture.dart';
 import 'package:flutter_combat/chapter8/notification.dart';
 import 'package:flutter_combat/chapter8/pointer.dart';
@@ -157,7 +163,7 @@ Widget rightDrawer(BuildContext context) {
         ExpansionTile(
           title: Text('第六章：可滚动组件'),
           children: _generateItem([
-            PageInfo('SingleChildScrollView', null),
+            PageInfo('SingleChildScrollView', SingleChildScrollViewTestRoute()),
             PageInfo('ListView', InfiniteListView()),
             PageInfo('GridView', InfiniteGridView()),
             PageInfo('CustomScrollView', CustomScrollViewTestRoute(), isJumpPage: true),
@@ -167,10 +173,10 @@ Widget rightDrawer(BuildContext context) {
         ExpansionTile(
           title: Text('第七章：功能型组件'),
           children: _generateItem([
-            PageInfo('导航返回拦截（WillPopScope）', null),
-            PageInfo('数据共享（InheritedWidget）', null),
+            PageInfo('导航返回拦截（WillPopScope）', WillPopScopeTestRoute()),
+            PageInfo('数据共享（InheritedWidget）', InheritedWidgetTestRoute()),
             PageInfo('跨组件状态共享（Provider）', ProviderRoute()),
-            PageInfo('颜色和主题（Theme）', null),
+            PageInfo('颜色和主题（Theme）', ThemeTestRoute(), isJumpPage: true),
             PageInfo('异步UI更新（FutureBuilder、StreamBuilder）', FutureAndStreamRoute()),
             PageInfo('对话框详解', DialogTestRoute())
           ]),
@@ -205,10 +211,10 @@ Widget rightDrawer(BuildContext context) {
         ExpansionTile(
           title: Text('第十一章：文件操作与网络请求'),
           children: _generateItem([
-            PageInfo('文件操作', null),
+            PageInfo('文件操作', FileOperationRoute()),
             PageInfo('Http请求-HttpClient', HttpTestRoute()),
             PageInfo('Http请求-Dio package', FutureBuilderRoute()),
-            PageInfo('WebSocket', null)
+            PageInfo('WebSocket', WebSocketRoute())
           ]),
         ),
         ExpansionTile(

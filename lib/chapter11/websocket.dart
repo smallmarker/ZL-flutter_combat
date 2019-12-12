@@ -22,7 +22,6 @@ class _WebSocketRouteState extends State<WebSocketRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('WebSocket(内容回显)'),),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(

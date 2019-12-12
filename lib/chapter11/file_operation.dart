@@ -50,7 +50,6 @@ class _FileOperationRouteState extends State<FileOperationRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('文件操作')),
       body: Center(
         child: Text('点击了 $_counter 次'),
       ),
