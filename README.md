@@ -1,16 +1,13 @@
 # flutter_combat
 
-A new Flutter application.
+《Flutter实战》示例练习
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+根据《Flutter实战》书籍上的示例进行相关练习，加深对Flutter中相关Widget的使用和认知。
 
-A few resources to get you started if this is your first Flutter project:
+## GIF Show
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+![flutter_combat](images/flutter_combat.gif)
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+
